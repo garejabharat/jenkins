@@ -17,23 +17,6 @@ pipeline{
                 sh 'npm test'
             }
        }
-
-       stage("Building Image"){
-            steps{
-               script{
-                 dockerImage = docker.build imageName
-               }
-            }
-       }
-    //    stage("Deploy Image"){
-    //         steps{
-    //            script{
-    //             docker.withRegistry ("https://index.docker.io/v2/",'dockerhub-creds'){
-    //                 dockerImage.push("${env.BUILD_NUMBER}") 
-    //             }
-    //            }
-    //         }
-    //    }
     }
 }   
 
